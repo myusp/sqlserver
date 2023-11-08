@@ -223,10 +223,10 @@ func (dialector Dialector) DataTypeOf(field *schema.Field) string {
 		}
 		return "nvarchar(MAX)"
 	case schema.Time:
-		if field.Precision > 0 {
-			return fmt.Sprintf("datetimeoffset(%d)", field.Precision)
-		}
-		return "datetimeoffset"
+		// if field.Precision > 0 {
+		// 	return fmt.Sprintf("datetimeoffset(%d)", field.Precision)
+		// }
+		return "datetime"
 	case schema.Bytes:
 		return "varbinary(MAX)"
 	}
